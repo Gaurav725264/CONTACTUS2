@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import { baseURL } from "../../baseURL";
 
 function Contact() {
   const [contact, setContact] = useState({
@@ -15,7 +16,7 @@ function Contact() {
   const submitForm = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:8000/api/auth/contactus", {
+    const response = await fetch(`${baseURL}/api/auth/contactus`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
